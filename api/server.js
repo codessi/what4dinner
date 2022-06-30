@@ -11,8 +11,8 @@ const port = process.env.PORT || 3001;
 app.use(express.json())
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/what-dinner")
-// mongoose.connect("mongodb+srv://johan123:.z!BS8r.fCGtBgG@cluster0.ryytm.mongodb.net/?retryWrites=true&w=majority")
+// mongoose.connect("mongodb://127.0.0.1:27017/what-dinner")
+mongoose.connect("mongodb+srv://johan123:.z!BS8r.fCGtBgG@cluster0.ryytm.mongodb.net/?retryWrites=true&w=majority")
   .then(() => console.log("connected to DB"))
   .catch(console.error);
 
