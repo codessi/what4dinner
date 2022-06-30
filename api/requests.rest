@@ -1,0 +1,12 @@
+
+GET http://localhost:3001/menu-items
+
+###
+POST http://localhost:3001/menu-items/new
+Content-Type:application/json
+
+
+  {"text": "pasta"}
+
+###
+DELETE http://localhost:3001/menu-items/delete/62bb2ee75c4892ac2c2dc049
