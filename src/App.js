@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [item, setItem] = useState("");
   const [menu, setMenu] = useState([]);
-  const [random, setRandom] = useState(0)
+  const [random, setRandom] = useState(null)
 
   const getFetch = () => {
       fetch("https://whats4dinnerbyjohan.herokuapp.com/menu-items")
