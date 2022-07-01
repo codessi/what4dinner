@@ -8,7 +8,7 @@ function App() {
   const [random, setRandom] = useState(0)
 
   const getFetch = () => {
-      fetch("http://localhost:3001/menu-items")
+      fetch("https://whats4dinnerbyjohan.herokuapp.com/menu-items")
       .then((res) => res.json())
       .then((result) => setMenu(result));
   }
@@ -29,7 +29,7 @@ function App() {
     body: JSON.stringify({ text: item }),
   };
   const addNew = () =>
-    fetch("http://localhost:3001/menu-items/new", requestOptions)
+    fetch("https://whats4dinnerbyjohan.herokuapp.com/menu-items/new", requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data));
 
@@ -37,7 +37,7 @@ function App() {
 
 
   const handleDelete = (id) => {
-    fetch("http://localhost:3001/menu-items/delete/" + id, { method: 'DELETE' })
+    fetch("https://whats4dinnerbyjohan.herokuapp.com/menu-items/delete/" + id, { method: 'DELETE' })
      .then(()=> getFetch())
   }
 
