@@ -20,8 +20,8 @@ function App() {
   }
   useEffect(() => {
     getFetch()
-    pickRandom()
-  }, [item]);
+    // pickRandom()
+  }, []);
 
   const requestOptions = {
     method: "POST",
@@ -31,7 +31,7 @@ function App() {
   const addNew = () =>
     fetch("https://whats4dinnerbyjohan.herokuapp.com/menu-items/new", requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then(()=> getFetch());
 
   const handleChange = (e) => setItem(e.target.value);
 
