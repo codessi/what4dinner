@@ -15,7 +15,7 @@ function App() {
 
 
   const pickRandom = () => {
-    const newNumb = Math.floor(Math.random() * menu.length - 1);
+    const newNumb = Math.floor(Math.random() * (menu.length - 1));
     setRandom(newNumb)
   }
   useEffect(() => {
@@ -47,6 +47,7 @@ function App() {
     item && addNew();
     setItem("");
   };
+  console.log(random)
 
   return (
     <div className="App">
@@ -55,17 +56,17 @@ function App() {
           <section>
             <h1>What's for 
               dinner?</h1>
-            <h2>
-              It's <span>{menu[random]?.text}</span>
-            </h2>
-            <button onClick={pickRandom}>Generate</button>
+            <h1 className="picked">
+             <span>{random != null&&random >= 0 &&`It's ${menu[random]?.text}`  }</span>
+            </h1>
+            <button className="generate" onClick={pickRandom}>Generate</button>
           </section>
           <section>
-            <ul className="flex">
+            <ul className="grid">
               {menu.map((item) => {
                 return <li key={item?._id}>
                   <p>{item?.text}</p>
-                  <button onClick={()=> handleDelete(item._id)}>x</button>
+                  <button className = "del-btn" onClick={()=> handleDelete(item._id)}>x</button>
                 </li>;
               })}
             </ul>
